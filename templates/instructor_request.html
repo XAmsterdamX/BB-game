@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}Request instructor access{% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<h1>Request instructor access</h1>
+<p>Instructor access allows you to start and manage your own games.
+    To get instructor access you can use the form below to send a message to the game creator.
+    For now instructor access is only given to people who are in personal contact with the game creator.</p>
+<form method="POST">
+  {% csrf_token %}
+  {{ form|crispy }}
+  <input class="btn btn-success" type="submit" value="Request instructor access">
+</form>
+{% endblock %}
+
+
+
